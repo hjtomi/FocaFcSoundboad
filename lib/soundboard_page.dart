@@ -5,7 +5,11 @@ import 'package:audioplayers/audioplayers.dart';
 // majd írd be az alábbi listába és automatikusan megjelentik az appban
 final List<String>files = [
   "Doma-Úristen.mp3",
-  "Miksa-Mi a fasz.mp3"
+  "Doma-KURVA ANYÁD.mp3",
+  "Miksa-Mi a fasz.mp3",
+  "Peti-Ölelgetsz mint egy buzi.wav",
+  "Peti-Csókolj meg.wav",
+  "Peti-Hát milyen buzi dolog ez.wav"
 ];
 
 class SoundboardPage extends StatefulWidget {
@@ -103,14 +107,6 @@ class Soundboard extends StatelessWidget {
               SoundboardButton(file: file),
             for (var file in files)
               SoundboardButton(file: file),
-            for (var file in files)
-              SoundboardButton(file: file),
-            for (var file in files)
-              SoundboardButton(file: file),
-            for (var file in files)
-              SoundboardButton(file: file),
-            for (var file in files)
-              SoundboardButton(file: file),
           ]
         ),
       ),
@@ -145,14 +141,22 @@ class SoundboardButton extends StatelessWidget {
         TextSpan(
           children: [
             TextSpan(
-              text: file.replaceAll("assets/", "").replaceAll(".mp3", "").split("-")[0],
+              text: file
+                .replaceAll("assets/", "")
+                .replaceAll(".mp3", "")
+                .replaceAll(".wav", "")
+                .split("-")[0],
               style: TextStyle(
                 fontSize: 15.0,
               ),
             ),
             TextSpan(text: "\n"),
             TextSpan(
-              text: file.replaceAll("assets/", "").replaceAll(".mp3", "").split("-")[1],
+              text: file
+              .replaceAll("assets/", "")
+              .replaceAll(".mp3", "")
+              .replaceAll(".wav", "")
+              .split("-")[1],
               style: TextStyle(
                 fontSize: 20.0,
               ),
